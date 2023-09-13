@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LB 1</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect-" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div class="background">
+        <header class="header">
+            <div class="header-container">
+                <a class="header-item" href="https://se.ifmo.ru/~s353349/lb1/index.htm" target="_blank"> <h2>Lab Work 1</h2></a>
+                <a class="header-item" href="https://isu.ifmo.ru/pls/apex/f?p=2437:7:109555636440371:::::" target="_blank"> <h2>Zarubov E.N</h2></a>
+                <a class="header-item" href="https://isu.ifmo.ru/pls/apex/f?p=2143:GR:109555636440371::NO:RP:GR_GR,GR_DATE:P3218," target="_blank"> <h2>Group P3218</h2></a>
+                <a class="header-item" href="https://se.ifmo.ru/courses/web" target="_blank"> <h2>Variant 2802</h2></a>
+            </div>
+            <div class="git-logo">
+                <a href="https://github.com/byrybdyk/Web" target="_blank">
+                    <img class="git-img" src="/source/GitHublogo.png"  alt="git-logo">
+                </a>
+            </div>
+        </header>
+        
+        <main class="main">
+            <div class="graph-container">
+                <form id="form">
+                    <div class="graph">
+                        <canvas id="graph" height="277" width="280"></canvas>
+                    </div>
+
+                    <div class="input">
+                        
+
+                        <div class="main-input-x">
+                            X
+                            <div class="input-form-X">
+    
+                                <p>
+                                    <label for="xRadio-3">-3</label>
+                                    <input type="radio" id="xRadio-3" name="xRadio" value="-3" required title="x radio">
+                                </p>
+    
+                            </div>
+                            <div class="input-form-X">
+    
+                                <p>
+                                    <label for="xRadio-2">-2</label>
+                                    <input type="radio" id="xRadio-2" name="xRadio" value="-2" required title="x radio">
+                                </p>
+    
+                            </div>
+                            <div class="input-form-X">
+    
+                                <p>
+                                    <label for="xRadio-1">-1</label>
+                                    <input type="radio" id="xRadio-1" name="xRadio" value="-1" required title="x radio">
+                                </p>
+    
+                            </div>
+                            <div class="input-form-X">
+    
+                                <p>
+                                    <label for="xRadio0">0</label>
+                                    <input type="radio" id="xRadio0" name="xRadio" value="0" required title="x radio">
+                                </p>
+    
+                            </div>
+                            <div class="input-form-X">
+    
+                                <p>
+                                    <label for="xRadio1">1</label>
+                                    <input type="radio" id="xRadio1" name="xRadio" value="1" required title="x radio">
+                                </p>
+    
+                            </div>
+                            <div class="input-form-X">
+    
+                                <p>
+                                    <label for="xRadio2">2</label>
+                                    <input type="radio" id="xRadio2" name="xRadio" value="2" required title="x radio">
+                                </p>
+    
+                            </div>
+                            <div class="input-form-X">
+    
+                                <p>
+                                    <label for="xRadio3">3</label>
+                                    <input type="radio" id="xRadio3" name="xRadio" value="3" required title="x radio">
+                                </p>
+    
+                            </div>
+                            <div class="input-form-X">
+    
+                                <p>
+                                    <label for="xRadio4">4</label>
+                                    <input type="radio" id="xRadio4" name="xRadio" value="4" required title="x radio">
+                                </p>
+    
+                            </div>
+                            <div class="input-form-X">
+    
+                                <p>
+                                    <label for="xRadio5">5</label>
+                                    <input type="radio" id="xRadio5" name="xRadio" value="5" required title="x radio">
+                                </p>
+    
+                            </div>
+                            
+                                
+                        
+                        </div>
+                        
+                        <div class="input-y">
+                            Y
+                            <div class="y-form">
+                                <input id="yCoordinate" required name="yCoordinate" placeholder="Enter a number"
+                                    type="number" step="any" min="-3" max="5" value="">
+                            </div>
+
+                        </div>
+                        
+
+                        <div class="main-input-r">
+                            R
+                            <div class="input-r">
+                                <!-- <label for="rSelect">R</label> -->
+                                <select name="r-select" id="rSelect" title="R">
+                                    <option value="1">1</option>
+                                    <option value="1.5">1.5</option>
+                                    <option value="2">2</option>
+                                    <option value="2.5">2.5</option>
+                                    <option value="3">3</option>
+                    
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="input-submit">
+                            <button class="submit-form-button" type="submit" id="submit">Submit</button>
+                        </div>
+
+
+                    </div>
+
+                    
+        
+                </form>
+        
+                
+                
+            </div>
+
+            <div class="main-table-block">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>R Параметр</th>
+                            <th>X координата</th>
+                            <th>Y координата</th>
+                            <th>Попадание в область</th>
+                            <th>Время</th>
+                            <th>Время выполнения (мс)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Place for results -->
+                    </tbody>
+                </table>
+                <div class="input-clear">
+                    <button class="submit-form-button" id="clearButton">Очистить таблицу</button>
+                </div>
+            </div>
+            
+        </main>
+    
+    
+        <script type='text/javascript' src="/js/graph.js"></script>
+        <script src="/js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </div>
+    
+</body>
+</html>

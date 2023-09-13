@@ -1,0 +1,235 @@
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #D8C3A5 0%, rgba(234, 231, 220, 0.80) 100%);
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+/* Стили для шапки */
+.header{
+    padding-left: 304px;
+    width: 1096px;
+    height: 45px;
+    padding-top: 88px;
+    display: flex;
+    align-items: center;
+}
+
+.header-container{
+    
+    display: flex;
+    align-items: center;
+
+}
+
+.header-item{
+    margin-right: 57px;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s linear;
+}
+
+.header-item:hover{
+    color: #FF1A00;
+}
+
+
+
+/* Селектор атрибутов
+a[href*="isu"]:hover{
+    color: gold;
+}
+
+div{
+    background-color: #FF1A00;
+}
+ селектор дочерних элементов
+main > div{
+    background-color: blue;
+} */
+
+
+
+.git-logo{
+    position: relative;
+    padding-right: 1px;
+    padding-left: 40px;
+}
+
+.main{
+    display: flex;
+}
+
+.graph-container{
+    padding-left: 304px;
+    padding-top: 62px;
+    width: 260px;
+}
+
+.graph{
+    width: 260px;
+    height: 260px;
+}
+
+.input{
+    margin-top: 15px;
+    width: 260px;
+}
+
+.main-input-x{
+    align-items: center;
+    display: flex;
+}
+
+
+.input-form-X{
+    text-align: center;
+    padding-left: 7px;
+    width: 21px; 
+}
+
+.input-y{
+    align-items: center;
+    display: flex;
+}
+
+.y-form{
+    /* text-align: center; */
+    padding-left: 10px;
+
+}
+
+input{
+    background: #D9D9D9;
+    border: 1px solid #000;
+}
+
+.main-input-r{
+    align-items: center;
+    display: flex;
+    padding-top: 12px;
+    width: 100px;
+}
+
+.input-r{
+    /* text-align: center; */
+    
+    padding-left: 7px;
+    width: 21px; 
+}
+
+select{
+    background: #D9D9D9;
+    border: 1px solid #000;
+    width: 200px;
+}
+
+option{
+    height: 21px;
+    width: 200px;
+}
+
+.input-submit{
+    padding-top: 15px;
+    margin-left: 61px;
+
+    
+}
+
+.submit-form-button{
+    width: 126px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: #D9D9D9;
+    color: #FF1A00;
+
+    /* user-select:none; */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+
+.submit-form-button:hover {
+    transition-duration: 0.3s;
+    background-color: #FF1A00;
+    color:  #000;
+  }
+
+
+  
+  
+  .submit-form-button:after {
+    content: "";
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s;
+    box-shadow: 0 0 200px 50px white;
+  }
+
+  .submit-form-button:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+  }
+
+  
+  
+  .submit-form-button:active {
+    top: 1px;
+  }
+
+
+
+
+
+.main-table-block{
+    padding-left: 100px;
+    padding-top: 68px;
+    font-size: 13px;
+}
+
+table {
+    width: 400px;
+    border-collapse: collapse;
+    background-color: #EAE7DC;
+    border: 2px solid #000;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 2px solid #000;
+}
+
+
+
+
+.input-clear{
+    margin-left: 195px;
+    padding-top: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
