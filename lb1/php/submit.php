@@ -15,7 +15,7 @@ if (!validate_values($xCoordinate, $yCoordinate, $radius)) {
 function validate_values($xCoordinate, $yCoordinate, $radius)
 {
     return in_array($xCoordinate, [-3, -2, -1, 0, 1, 2, 3, 4, 5])
-        and (is_numeric($yCoordinate) and $yCoordinate >= -5 and $yCoordinate <= 3)
+        and (is_numeric($yCoordinate) and $yCoordinate >= -3 and $yCoordinate <= 5)
         and in_array($radius, [1, 1.5, 2, 2.5, 3]);
 }
 

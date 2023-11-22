@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const clearButton = document.getElementById('clearButton');
     const rSelected = document.getElementById('rSelect');
     const xRadios = document.querySelectorAll('input[name="xRadio"]');
+    const yCoordinateInput = document.getElementById('yCoordinate');
     
   
   
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
   
         const selectedX = document.querySelector('input[name="xRadio"]:checked');
-        const yCoordinateInput = document.getElementById('yCoordinate');
+        
         
         if (!selectedX) {
             alert('Пожалуйста, выберите радиус.');
@@ -20,8 +21,19 @@ document.addEventListener('DOMContentLoaded', function () {
   
   
         const yCoordinate = parseFloat(yCoordinateInput.value);
+
+        
+
+       
+
+        if(isNaN(yCoordinate)){
+            alert('не число');
+            return
+        }
+
+        
   
-        if (isNaN(yCoordinate) && yCoordinate <= -3 && yCoordinate >= 5) {
+        if (   yCoordinate > 5 || yCoordinate < -3 ) {
             alert('Пожалуйста, введите корректное числовое значение Y-координаты в диапазоне от -3 до 5.');
             return;
         }
@@ -33,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
         // send parameters for checking
         $.ajax({
-            url: '/php/submit.php',
+            url: 'php/submit.php',
             method: 'POST',
             data: { radius, xCoordinate, yCoordinate },
             success: function (response) {
@@ -54,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
   
   
-      // draw a dot
+      // Redraw graph for new R
       rSelected.addEventListener('change', function () {
           const selectedR = this.value;
           const validRadius = [ '1', '1.5', '2', '2.5', '3'];

@@ -9,26 +9,26 @@
 }
 /* Стили для шапки */
 .header{
-    padding-left: 25%;
-    width: 100%;
-    height: 7%;
-    padding-top: 7.5%;
+    padding-left: 304px;
+    width: 1096px;
+    height: 45px;
+    padding-top: 88px;
     display: flex;
     align-items: center;
 }
 
 .header-container{
-    
+
     display: flex;
     align-items: center;
 
 }
 
 .header-item{
-    margin-right: 12.85%;
+    margin-right: 57px;
     color: black;
     text-decoration: none;
-    font-weight: 59.6%;
+    font-weight: 700;
     transition: color 0.2s linear;
 }
 
@@ -56,7 +56,7 @@ main > div{
 .git-logo{
     position: relative;
     padding-right: 1px;
-    padding-left: 4%;
+    padding-left: 40px;
 }
 
 .main{
@@ -64,19 +64,19 @@ main > div{
 }
 
 .graph-container{
-    padding-left: 26%;
-    padding-top: 5.8%;
-    /* width: 22%; */
+    padding-left: 304px;
+    padding-top: 62px;
+    width: 260px;
 }
 
-/* .graph{
-    width: 260px;
-    height: 260px;
-} */
+.graph{
+    width: 285px;
+    height: 285px;
+}
 
 .input{
-    margin-top: 1%;
-    width: 22%;
+    margin-top: 15px;
+    width: 260px;
 }
 
 .main-input-x{
@@ -87,8 +87,8 @@ main > div{
 
 .input-form-X{
     text-align: center;
-    padding-left: 0.7%;
-    width: 21px; 
+    padding-left: 7px;
+    width: 21px;
 }
 
 .input-y{
@@ -116,9 +116,9 @@ input{
 
 .input-r{
     /* text-align: center; */
-    
+
     padding-left: 7px;
-    width: 21px; 
+    width: 21px;
 }
 
 select{
@@ -136,7 +136,7 @@ option{
     padding-top: 15px;
     margin-left: 61px;
 
-    
+
 }
 
 .submit-form-button{
@@ -159,12 +159,12 @@ option{
     transition-duration: 0.3s;
     background-color: #FF1A00;
     color:  #000;
-  }
+}
 
 
-  
-  
-  .submit-form-button:after {
+
+
+.submit-form-button:after {
     content: "";
     border-radius: 4em;
     left: 0;
@@ -174,9 +174,9 @@ option{
     opacity: 0;
     transition: all 1s;
     box-shadow: 0 0 200px 50px white;
-  }
+}
 
-  .submit-form-button:active:after {
+.submit-form-button:active:after {
     box-shadow: 0 0 0 0 white;
     position: absolute;
     border-radius: 4em;
@@ -184,13 +184,13 @@ option{
     top:0;
     opacity: 1;
     transition: 0s;
-  }
+}
 
-  
-  
-  .submit-form-button:active {
+
+
+.submit-form-button:active {
     top: 1px;
-  }
+}
 
 
 
@@ -200,7 +200,6 @@ option{
     padding-left: 100px;
     padding-top: 68px;
     font-size: 13px;
-    display: flex;
 }
 
 table {
@@ -223,14 +222,3 @@ th, td {
     margin-left: 195px;
     padding-top: 12px;
 }
-
-
-
-
-
-
-
-
-
-
-
