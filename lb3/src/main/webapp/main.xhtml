@@ -3,18 +3,19 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:ice="http://www.icefaces.org/icefaces/components" xmlns:ace="http://www.icefaces.org/icefaces/components"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:c="http://java.sun.com/jsp/jstl/core" >
-<!--      xmlns:ice="http://www.icefaces.org/icefaces/components" xmlns:ace="http://www.icefaces.org/icefaces/components"-->
 
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html" />
         <h:outputStylesheet library="css" name="styles.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
         <title>LB 3</title>
     </h:head>
     <h:body>
@@ -25,7 +26,7 @@
                     <a class="header-item" href="https://se.ifmo.ru/~s353349/lb1/index.htm" target="_blank"> <h2>Lab Work 3</h2></a>
                     <a class="header-item" href="https://isu.ifmo.ru/pls/apex/f?p=2437:7:109555636440371:::::" target="_blank"> <h2>Zarubov E.N</h2></a>
                     <a class="header-item" href="https://isu.ifmo.ru/pls/apex/f?p=2143:GR:109555636440371::NO:RP:GR_GR,GR_DATE:P3218," target="_blank"> <h2>Group P3218</h2></a>
-                    <a class="header-item" href="https://se.ifmo.ru/courses/web" target="_blank"> <h2>Variant 2802</h2></a>
+                    <a class="header-item" href="https://se.ifmo.ru/courses/web" target="_blank"> <h2>Variant 29121</h2></a>
                 </div>
                 <div class="git-logo">
                     <a href="https://github.com/byrybdyk/Web" target="_blank">
@@ -52,69 +53,62 @@
                                     X
                                     <div class="input-form-X">
 
-                                            <h:selectOneRadio  id="xRadio" name="rRadio"   value="#{pointBean.x}" required="true" >
-                                                <f:selectItem itemValue="-5" itemLabel="-5" class="input-form-X" />
-                                                <f:selectItem itemValue="-4" itemLabel="-4" class="input-form-X" />
-                                                <f:selectItem itemValue="-3" itemLabel="-3" class="input-form-X" />
-                                                <f:selectItem itemValue="-2" itemLabel="-2" class="input-form-X" />
-                                                <f:selectItem itemValue="-1" itemLabel="-1" class="input-form-X" />
-                                                <f:selectItem itemValue="0" itemLabel="0" class="input-form-X" />
-                                                <f:selectItem itemValue="1" itemLabel="1" class="input-form-X" />
-                                                <f:selectItem itemValue="2" itemLabel="2" class="input-form-X" />
-                                                <f:selectItem itemValue="3" itemLabel="3" class="input-form-X" />
+                                            <h:selectOneRadio  id="xRadio" name="xRadio" styleClass="input-form-X"  value="#{pointBean.x}" required="true" >
+                                                <f:selectItem itemValue="-5" itemLabel="-5" class="main-input-x" />
+                                                <f:selectItem itemValue="-4" itemLabel="-4" class="main-input-x" />
+                                                <f:selectItem itemValue="-3" itemLabel="-3" class="main-input-x" />
+                                                <f:selectItem itemValue="-2" itemLabel="-2" class="main-input-x" />
+                                                <f:selectItem itemValue="-1" itemLabel="-1" class="main-input-x" />
+                                                <f:selectItem itemValue="0" itemLabel="0" class="main-input-x" />
+                                                <f:selectItem itemValue="1" itemLabel="1" class="main-input-x" />
+                                                <f:selectItem itemValue="2" itemLabel="2" class="main-input-x" />
+                                                <f:selectItem itemValue="3" itemLabel="3" class="main-input-x" />
                                                 <f:validateRequired/>
 
-                                                <f:ajax execute="@this" render="@form"/>
+                                                <f:ajax execute="@this" />
                                             </h:selectOneRadio>
+
+                                             <h:inputText value="#{pointBean.x}" name="X-Input-hidden" maxlength="50" id="X-Input-hidden" styleClass="hidden" disabled="false">
+                                            <f:ajax execute="@this"/>
+                                             </h:inputText>
 
 
                                     </div>
-<!--
-
-
-<!-                                    <ice:sliderEntry style="width: 250px;" id="X-Input" value="#{pointBean.x}" min="-2" max="2" stepPercent="25">-->
-<!--                                        <ice:ajax execute="@this" render="@form"/>-->
-<!--                                    </ice:sliderEntry>-->
-<!--                                    <h:inputText value="#{pointBean.x}" name="X-Input-hidden" maxlength="50" id="X-Input-hidden" disabled="false">-->
-<!--                                        <f:validateDoubleRange minimum="-2" maximum="2"/>-->
-<!--                                        <f:ajax execute="@this" render="@form"/>-->
-<!--                                    </h:inputText>-->
                                 </div>
                                 <div class="input-y">
                                     <div class="input-y">
                                         Y
                                     </div>
-                                    <h:inputText  value="#{pointBean.y}" id="yCoordinate" required="true" name="yCoordinate" maxlength="50"  a:placeholder="-5 ... 3">
-                                        <f:validateRequired/>
-                                        <f:validateDoubleRange minimum="-5" maximum="3"/>
-                                        <f:ajax execute="@this" render="@form"/>
+                                    <h:inputText  value="#{pointBean.y}" id="yCoordinate" required="true" styleClass="input-y" name="yCoordinate" min="-5" max="3" maxlength="50"  a:placeholder="-5 ... 3">
+                                        <f:ajax execute="@this" />
                                     </h:inputText>
-<!--                                    <h:message for="Y-Input" id="Y-Input-error" class="error" style="max-width: 75px"/>-->
                                 </div>
                                 <div class="main-input-r">
                                     <div class="main-input-r">
                                         R
                                     </div>
-                                    <h:inputText  value="#{pointBean.r}" id="radius" required="true" name="yCoordinate" maxlength="50"  a:placeholder="1 ... 4">
-                                        <f:validateRequired/>
-                                        <f:validateDoubleRange minimum="1" maximum="4"/>
-                                        <f:ajax execute="@this" render="@form"/>
+                                    <h:inputText  value="#{pointBean.r}" id="radius" required="true" name="yCoordinate" min="1" max="4" maxlength="50"  a:placeholder="1 ... 4">
+                                        <f:ajax execute="@this" event="change" render="drawPoints"/>
                                     </h:inputText>
                                 </div>
                                 <div class="input-submit">
                                     <h:commandButton id="submit" class="submit-form-button" value="Submit">
-                                        <f:ajax execute="@form" listener="#{resultsBean.addPoint(pointBean)}" render="@form resultTable drawPoints" />
+                                        <f:ajax execute="@form" listener="#{resultsControllerBean.addResult(pointBean.x, pointBean.y, pointBean.r, 'shit')}"
+                                                render="drawPoints results-table"/>
                                     </h:commandButton>
                                 </div>
+                                    <h:commandButton value="Clear" styleClass="submit-form-button">
+                                        <f:ajax execute="@form" listener="#{resultsControllerBean.clearResults(pointBean.r)}" render="drawPoints results-table"
+                                                onevent="updateGraph()"/>
+                                    </h:commandButton>
+
+
+
+<!--                                    <h:button outcome="returnToIndex" value="Back" styleClass="abstract-util-button" style="background-color: #3831fe;-->
+<!--                                        color: white; "/>-->
+
                                 </h:form>
                         </div>
-                        <h:form id="test">
-
-                            <h:inputText value="#{pointBean.x}" />
-                            <h:inputText value="#{pointBean.y}" />
-                            <h:inputText value="#{pointBean.r}" />
-                            <h:commandButton value="Отправить"  action="#{pointBean.test}" />
-                        </h:form>
 
                     </div>
                 </div>
@@ -126,39 +120,36 @@
 
             <div class="main-table-block">
                 <div class="resultsTable">
-    <!--                <ui:repeat id = "drawPoint" value="#{resultsBean.results}" var="result">-->
-    <!--                    <h:outputScript>-->
-    <!--                        drawPoint('#{result.x}', '#{result.y}', '#{result.r}', '#{result.inArea}');-->
-    <!--                    </h:outputScript>-->
-    <!--                </ui:repeat>-->
                     <h:panelGroup id = "drawPoints">
-                        <h:outputScript>
-                            //clearPoints();
-                        </h:outputScript>
-                        <c:forEach items="#{resultsBean.results}" var="result">
+                        <ui:repeat value="#{resultsControllerBean.results}" var="result">
                             <h:outputScript>
-                                drawPoint('#{result.x}', '#{result.y}', '#{result.inArea}');
+
+                                printDotOnGraph2('#{result.x}', '#{result.y}', "#{pointBean.isInArea(result.x, result.y, pointBean.r)}");
                             </h:outputScript>
-                        </c:forEach>
+                        </ui:repeat>
                     </h:panelGroup>
-                    <h:dataTable id = "resultTable" value="#{resultsBean.results}" var="result">
-                        <h:column>
-                            <f:facet name = "header">X</f:facet>
+                    <h:dataTable id = "results-table" class="resultTable" value="#{resultsControllerBean.results}" var="result" >
+                        <h:column styleClass="new-cell">
+                            <f:facet name="header">X</f:facet>
                             #{result.x}
                         </h:column>
-                        <h:column>
-                            <f:facet name = "header">Y</f:facet>
+
+                        <h:column styleClass="new-cell">
+                            <f:facet name="header">Y</f:facet>
                             #{result.y}
                         </h:column>
-                        <h:column>
-                            <f:facet name = "header">R</f:facet>
+
+                        <h:column styleClass="new-cell">
+                            <f:facet name="header">R</f:facet>
                             #{result.r}
                         </h:column>
-                        <h:column>
-                            <f:facet name = "header">Res</f:facet>
-                            #{result.inArea ? "Есть пробите!" : "Рекашет!"}
+
+                        <h:column styleClass="new-cell">
+                            <f:facet name="header">Result</f:facet>
+                            #{result.result ? "Hit" : "Miss"}
                         </h:column>
                     </h:dataTable>
+
                 </div>
                 <div class="index-menu">
                     <h:link outcome="index">
@@ -169,7 +160,6 @@
                 </div>
             <h:outputScript library="js" name="script.js" />
             <h:outputScript library="js" name="graph.js" />
-            <h:outputScript url="https://code.jquery.com/jquery-3.6.0.min.js" />
 
         </div>
 

@@ -1,5 +1,6 @@
 package com.example.model;
 
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
@@ -7,36 +8,33 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import static java.rmi.server.LogStream.log;
 
 @Named
+@RequestScoped
 public class PointBean implements Serializable {
-    private double x;
-    private double y;
-    private int r;
-    private boolean isInArea;
-    private List<Integer> selectedR;
+    private double x = 0.0;
+    private double y = 0.0;
+    private double r = 0.0;
+    private boolean result;
+//    private List<Integer> selectedR;
     private String sessionId;
 
     public PointBean() {
-        selectedR = new ArrayList<>();
-        selectedR.add(1);
         sessionId = getSessionId();
     }
 
-    public boolean isInArea() {
-        if(x < 0 && y < 0) {
-            return -2*x - y <= r && 2*x >= -r && y >= -r;
-        } else if (x>= 0 && y >= 0) {
-            return 4*(x*x + y*y) <= r;
-        } else if (x>=0 && y <= 0) {
-            return x <= r && 2*y >= -r;
-        }
-        return false;
+//    public static boolean isInArea() {
+//        return (((x >= 0 )&&(x <= r)&&(0 >= y)&& (y>= -r/2))
+//                || ((x >= 0)&& (y >= 0)&& (x*x+y*y <= r*r))
+//                || ((r/2 >= -x)&&(x<=0)&&(y >= 0)&&(y <=(r/2 +x)*2 )));
+//    }
+
+    public static boolean isInArea(double x, double y, double r) {
+        return (((x >= 0 )&&(x <= r)&&(0 >= y)&& (y>= -r/2))
+                || ((x >= 0)&& (y >= 0)&& (x*x+y*y <= r*r))
+                || ((r/2 >= -x)&&(x<=0)&&(y >= 0)&&(y <=(r/2 +x)*2 )));
     }
 
     public double getX() {
@@ -55,29 +53,23 @@ public class PointBean implements Serializable {
         this.y = y;
     }
 
-    public int getR() {
+    public double getR() {
         return r;
     }
 
-    public void setR(int r) {
+    public void setR(double r) {
         this.r = r;
     }
 
-    public List<Integer> getSelectedR() {
-        return selectedR;
+
+
+
+    public void setResult(boolean result) {
+        this.result = result;
     }
 
-    public void setSelectedR(List<Integer> selectedR) {
-        this.selectedR = selectedR;
-        if(selectedR == null) {
-            this.selectedR = new ArrayList<>();
-            this.selectedR.add(1);
-        }
-        this.r = selectedR.get(0);
-    }
-
-    public void setInArea(boolean inArea) {
-        isInArea = inArea;
+    public boolean getResult(){
+        return this.result;
     }
 
     public String getSessionId() {
@@ -104,12 +96,12 @@ public class PointBean implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PointBean pointBean = (PointBean) o;
-        return Double.compare(pointBean.x, x) == 0 && Double.compare(pointBean.y, y) == 0 && r == pointBean.r && isInArea == pointBean.isInArea && Objects.equals(selectedR, pointBean.selectedR);
+        return Double.compare(pointBean.x, x) == 0 && Double.compare(pointBean.y, y) == 0 && r == pointBean.r && result == pointBean.result;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, r, isInArea, selectedR);
+        return Objects.hash(x, y, r, result);
     }
 
     @Override
@@ -118,11 +110,7 @@ public class PointBean implements Serializable {
                 "x=" + x +
                 ", y=" + y +
                 ", r=" + r +
-                ", isInArea=" + isInArea +
-                ", selectedX=" + selectedR +
+                ", isInArea=" + result +
                 '}';
-    }
-    public void test(){
-        log(String.valueOf(x));
     }
 }

@@ -22,8 +22,15 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
+  implementation 'junit:junit:4.13.1'
   compileOnly('jakarta.platform:jakarta.jakartaee-web-api:9.1.0')
   compileOnly('jakarta.mvc:jakarta.mvc-api:2.0.0')
+
+  implementation ('org.postgresql:postgresql:42.2.5')
+  implementation ('jakarta.platform:jakarta.jakartaee-api:9.1.0')
+
+
+
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

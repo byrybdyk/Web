@@ -126,48 +126,49 @@ if (graph){
 
             const table = document.getElementById("resultsTable");
             const graph = document.getElementById("graph");
-            if ((table)&&(graph)) {
-                processTable(table, rValue);
-            }
+            // if ((table)&&(graph)) {
+            //     processTable(table, rValue);
+            // }
 
 
 
     }
-    function processTable(table, r) {
-        for (let item of table.rows) {
-            let x = parseFloat(item.children[1].innerText.trim());
-            let y = parseFloat(item.children[2].innerText.trim());
-
-
-            if (isNaN(x) || isNaN(y)) continue;
-            let result = dotInGraph(x,y,r);
-            // alert(x +" "+ y);
-            printDotOnGraph(x, y, result);
-
-        }
-    }
+    // function processTable(table, r) {
+    //     for (let item of table.rows) {
+    //         let x = parseFloat(item.children[1].innerText.trim());
+    //         let y = parseFloat(item.children[2].innerText.trim());
+    //
+    //
+    //         if (isNaN(x) || isNaN(y)) continue;
+    //         let result = dotInGraph(x,y,r);
+    //         // alert(x +" "+ y);
+    //         printDotOnGraph2(x, y, result);
+    //
+    //     }
+    // }
 
 
 // draw graph with standard label
     redrawGraph(rValue);
 
-    function printDotOnGraph(xCenter, yCenter, result) {
+    function printDotOnGraph2(xCenter, yCenter, resultValue) {
 
         // alert(result);
-        ctx.fillStyle = 'blue'
-        if(result){
+        if(resultValue === 'true'){
             ctx.fillStyle = 'red'
+        }
+        if(resultValue === 'false'){
+            ctx.fillStyle = 'blue'
         }
         let x = center_x + xCenter * hatchGap * (2 / rValue) - 3, y = center_y - yCenter * hatchGap * (2 / rValue) - 3;
         ctx.fillRect(x, y, 6, 6);
     }
 
-    function dotInGraph(x,y,r){
-        if(((x >= 0 )&&(x <= r)&&(0 >= y)&& (y>= -r/2))|| ((x >= 0)&& (y >= 0)&& (x*x+y*y <= r*r))|| ((r/2 >= -x)&&(x<=0)&&(y >= 0)&&(y <= r+2*x))) {
-            return true;
-        }
-        else return false;
-    }
+    // function dotInGraph(x,y,r){
+    //
+    //     return ((x >= 0 )&&(x <= r)&&(0 >= y)&& (y>= -r/2))||
+    //         ((x >= 0)&& (y >= 0)&& (x*x+y*y <= r*r))|| ((r/2 >= -x)&&(x<=0)&&(y >= 0)&&(y <=(r/2 +x)*2 ));
+    // }
 
 }
 

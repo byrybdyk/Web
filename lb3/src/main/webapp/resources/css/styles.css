@@ -84,23 +84,7 @@ main > div{
 
 
 
-.main-input-x{
-    align-items: center;
-    display: flex;
-    /*padding-right: 7px;*/
-}
-td#main-input-x{
-    text-align: center;
-    padding-left: 7px;
-    width: 21px;
-}
 
-
-.input-form-X{
-    text-align: center;
-    padding-left: 7px;
-    width: 21px;
-}
 
 
 .input-y{
@@ -208,6 +192,10 @@ td#main-input-x{
     top: 1px;
 }
 
+.hidden{
+    display: none;
+}
+
 
 
 
@@ -218,14 +206,14 @@ td#main-input-x{
     font-size: 13px;
 }
 
-table#resultTable {
+.resultTable {
     width: 400px;
     border-collapse: collapse;
     background-color: #EAE7DC;
     border: 2px solid #000;
 }
 
-th#resultTable, td#resultTable{
+.resultsTable th, td {
     padding: 8px;
     text-align: center;
     border: 2px solid #000;
@@ -234,7 +222,30 @@ th#resultTable, td#resultTable{
 
 
 
+
+
+
+
+
 .input-clear{
     margin-left: 195px;
     padding-top: 12px;
+}
+
+.main-input-x{
+    align-items: center;
+    display: flex;
+    /*padding-right: 7px;*/
+}
+.main-input-x td{
+    text-align: center;
+    padding-left: 7px;
+    width: 21px;
+}
+
+
+.input-form-X{
+    text-align: center;
+    padding-left: 7px;
+    width: 21px;
 }
